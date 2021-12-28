@@ -1,11 +1,27 @@
 import React from 'react';
-import {View, Text, TextInput} from 'react-native';
-import styles from '../Screens/styles';
+import {View, Text, TextInput, StyleSheet} from 'react-native';
+import styles from '../stylings';
 
-const Input = ({placeholder}) => {
+// const styles = StyleSheet.create(styling);
+
+const Input = ({
+  style,
+  placeholder,
+  keyboardType,
+  secureTextEntry,
+  onChangeText,
+  value,
+}) => {
   return (
     <View>
-      <TextInput style={styles.Input} placeholder={placeholder} />
+      <TextInput
+        value={value}
+        keyboardType={keyboardType}
+        style={style}
+        placeholder={placeholder}
+        secureTextEntry={secureTextEntry}
+        onChangeText={onChangeText}
+      />
     </View>
   );
 };
